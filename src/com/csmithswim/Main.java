@@ -1,8 +1,25 @@
-package com.csmithswim;
+import java.io.*;
+import java.util.*;
 
-public class Main {
+interface AdvancedArithmetic{
+    int divisorSum(int n);
+}
+class Calculator implements AdvancedArithmetic {
+    public int divisorSum(int n) {
+        return 0;
+    }
+}
+
+class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        scan.close();
+
+        AdvancedArithmetic myCalculator = new Calculator();
+        int sum = myCalculator.divisorSum(n);
+        System.out.println("I implemented: " + myCalculator.getClass().getInterfaces()[0].getName() );
+        System.out.println(sum);
     }
 }
